@@ -16,7 +16,8 @@ class User(db.Model):
 
 	@property
 	def password(self):
-		raise AttributeError('password: write-only field')
+		# raise AttributeError('password: write-only field')
+		pass
 
 	@password.setter
 	def password(self, password):

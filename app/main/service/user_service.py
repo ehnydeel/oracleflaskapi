@@ -4,14 +4,14 @@ import uuid
 import datetime
 
 from app.main import db
-from app.main.model import user
+from app.main.model.user import User
 
 
 def save_new_user(data):
 	user = User.query.filter_by(email=data['email']).first()
 	if not user:
 		new_user = User(
-			public_id = str(uuid.uuid64()),
+			public_id = str(uuid.uuid4()),
 			email = data['email'],
 			username = data['username'],
 			password = data['password'],
